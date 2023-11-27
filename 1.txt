@@ -1,0 +1,19 @@
+public class App {
+public static void main(String[] args) {
+// Declaring variables.
+int a = 10;
+int b = 3;
+// Arithmetic Operators
+int sum = a + b;
+int difference = a - b;
+int product = a * b;
+int division = a / b;
+int remainder = a % b;
+// Displaying Results
+System.out.println("a + b = " + sum);
+System.out.println("a - b = " + difference);
+System.out.println("a * b = " + product);
+System.out.println("a / b = " + division);
+System.out.println("a % b = " + remainder);
+}
+}

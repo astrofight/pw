@@ -1,0 +1,66 @@
+public class OverloadingAndConstructors {
+    public static void main(String[] args) {
+        // Function Overloading
+        printMessage("Hello");
+        printMessage("Hi", 3);
+
+        // Constructors of all types
+        MyClass obj1 = new MyClass(); // Default constructor
+        MyClass obj2 = new MyClass(42); // Single-parameter constructor
+        MyClass obj3 = new MyClass(3.14, "Java"); // Multi-parameter constructor
+
+        // Default parameters using method overloading
+        displayInfo("John");
+        displayInfo("Jane", 25);
+
+        // Returning by reference (modifying object state)
+        MyResult resultHolder = new MyResult();
+        calculateSquare(resultHolder, 5);
+        System.out.println("Result: " + resultHolder.value);
+    }
+
+    // Function Overloading
+    static void printMessage(String message) {
+        System.out.println(message);
+    }
+
+    static void printMessage(String message, int times) {
+        for (int i = 0; i < times; i++) {
+            System.out.println(message);
+        }
+    }
+
+    // Constructors of all types
+    static class MyClass {
+        MyClass() {
+            System.out.println("Default constructor");
+        }
+
+        MyClass(int value) {
+            System.out.println("Single-parameter constructor: " + value);
+        }
+
+        MyClass(double value, String text) {
+            System.out.println("Multi-parameter constructor: " + value + ", " + text);
+        }
+    }
+
+    // Default parameters using method overloading
+    static void displayInfo(String name) {
+        System.out.println("Name: " + name + ", Age: Not specified");
+    }
+
+    static void displayInfo(String name, int age) {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+
+    // Returning by reference (modifying object state)
+    static class MyResult {
+        int value;
+    }
+
+    static MyResult calculateSquare(MyResult result, int num) {
+        result.value = num * num;
+        return result;
+    }
+}

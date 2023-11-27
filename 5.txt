@@ -1,0 +1,57 @@
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        // Garbage Collection
+        Animal myDog = new Dog("Buddy");
+        myDog.makeSound();
+
+        // Packaging: Classes are organized in a package (com.example.myprogram)
+        // Accessing a public method from another class in the same package
+        System.out.println("Dog's name: " + ((Dog) myDog).getName());
+
+        // Accessing static variable and method
+        Animal.numberOfAnimals++;
+        Animal.printNumberOfAnimals();
+    }
+}
+
+// Abstract class with public access modifier
+ abstract class Animal {
+    // Private instance variable with private access modifier
+    private String name;
+
+    // Constructor with default access modifier
+    Animal(String name) {
+        this.name = name;
+    }
+
+    // Public method to get the name
+    public String getName() {
+        return name;
+    }
+
+    // Static variable with public access modifier
+    public static int numberOfAnimals = 0;
+
+    // Static method with public access modifier
+    public static void printNumberOfAnimals() {
+        System.out.println("Number of animals: " + numberOfAnimals);
+    }
+
+    // Abstract method
+    public abstract void makeSound();
+}
+
+// Concrete class in the same package
+class Dog extends Animal {
+    // Constructor
+    Dog(String name) {
+        super(name);
+    }
+
+    // Implementation of the abstract method
+    @Override
+    public void makeSound() {
+        System.out.println("Dog barks.");
+    }
+}

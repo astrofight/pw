@@ -1,0 +1,28 @@
+public class StringFunctions {
+public static void main(String[] args) {
+String str1 = "Hello, ";
+String str2 = "Java!";
+String concatenated = str1 + str2;
+System.out.println("Concatenated String: " + concatenated);
+int length = concatenated.length();
+System.out.println("Length of Concatenated String: " + length);
+char charAtIndex = concatenated.charAt(7);
+System.out.println("Character at Index 7: " + charAtIndex);
+String substring = concatenated.substring(7, 12);
+System.out.println("Substring: " + substring);
+String uppercase = concatenated.toUpperCase();
+String lowercase = concatenated.toLowerCase();
+System.out.println("Uppercase: " + uppercase);
+System.out.println("Lowercase: " + lowercase);
+boolean isEqual = str1.equals(str2);
+System.out.println("Are str1 and str2 equal? " + isEqual);
+boolean startsWith = concatenated.startsWith("Hello");
+boolean endsWith = concatenated.endsWith("Java!");
+System.out.println("Starts with 'Hello': " + startsWith);
+System.out.println("Ends with 'Java!': " + endsWith);
+int indexOfJava = concatenated.indexOf("Java");
+System.out.println("Index of 'Java': " + indexOfJava);
+String replaced = concatenated.replace('o', 'O');
+System.out.println("Replaced 'o' with 'O': " + replaced);
+}
+}

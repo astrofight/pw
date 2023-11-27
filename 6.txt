@@ -1,0 +1,36 @@
+interface MyInterface { void myMethod();
+}
+
+class Parent {
+void commonMethod() {
+System.out.println("Common method in Parent class");
+}
+}
+
+class Child extends Parent implements MyInterface { @Override
+ 
+public void myMethod() { System.out.println("MyMethod in Child class");
+}
+
+void overriddenMethod() {
+System.out.println("Overridden method in Child class");
+}
+}
+
+public class Main {
+public static void main(String[] args) { Child childObj = new Child();
+
+// Dynamic Binding
+MyInterface myInterfaceObj = childObj; myInterfaceObj.myMethod();
+
+Parent parentObj = childObj; parentObj.commonMethod();
+
+// Static Binding
+childObj.overriddenMethod();
+
+// Final Modifier
+final int constantValue = 42;
+// constantValue = 10; // Uncommenting this line will result in a compilation error
+System.out.println("Constant Value: " + constantValue);
+}
+}
